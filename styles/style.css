@@ -1,51 +1,127 @@
 body {
-    background-color: #f0f0f0;
-    margin: 0;
+  background-color: #dfdfdf;
+  margin: 0;
 }
 
 .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 50vh 1fr;
+  height: 10vh;
+
+  .create-task {
+    margin: 0 auto;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+
+    .create-task-container {
+      width: 90%;
+
+      h1 {
+        font-family: "Source sans 3";
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-family: "Source sans 3";
+        font-size: 28px;
+        line-height: 30px;
+        margin: 0px 0px 20px 0px;
+        color: #333;
+      }
+  
+      input,
+      textarea, select{
+        border: 0;
+        width: 100%;
+        height: 50px;
+        margin-top: 5px;
+        border-radius: 5px;
+        padding: 0px 0px 0px 10px;
+        font-size: 16px;
+        outline: none;
+        background-color: #fff;
+      }
+
+      button {
+        width: 100%;
+        height: 60px;
+        border: 0;
+        background-color: #333;
+        color: #fff;
+        margin-top: 30px;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 18px;
+        transition: all ease 0.2s;
+        outline: none;
+
+        &:hover {
+          background-color: #444;
+          cursor: pointer;
+        }
+      }
+  
+      textarea {
+        font-family: "Source sans 3";
+        font-size: 16px;
+        padding: 10px 0px 0px 10px;
+        resize: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "create-task"
+      "task-list";
 
     .create-task {
-        padding: 50px;
-        height: 100vh;
+      height: 350px;
+
+      .create-task-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f0;
 
         h1 {
-            font-family: "Source sans 3";
-            font-size: 60px;
-            margin: 0;
+          font-size: 40px;
+          text-align: center;
         }
-        
+
         p {
-            font-family: "Source sans 3";
-            font-size: 30px;
-            line-height: 35px;
-            margin: 0px 0px 20px 0px;
-            color: #333;
+          font-size: 22px;
+          line-height: 26px;
+          text-align: center;
         }
 
         input, textarea {
-            border: 0;
-            width: 100%;
-            height: 50px;
-            margin-top: 5px;
-            border-radius: 20px;
-            padding: 0px 0px 0px 10px;
-            font-size: 16px;
-            outline: none;
+          font-size: 16px;
+          height: 40px;
         }
 
-        textarea {
-            font-family: "Source sans 3";
-            font-size: 16px;
-            padding: 10px 0px 0px 10px;
-            resize: none;
+        button {
+          margin-top: 10px;
+          width: 90%;
+          height: 50px;
         }
+      }
     }
-    
+
     .task-list {
-        
+      height: 100%;
     }
+  }
 }
